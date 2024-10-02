@@ -108,7 +108,10 @@ function App() {
                                         variant="outlined"
                                         value={rgb[color]}
                                         onChange={(e) => {
-                                            const value = parseInt(e.target.value, 10);
+                                            let value = parseInt(e.target.value, 10);
+                                            if (isNaN(value)) {
+                                                value = 0;
+                                            }
                                             if (!isNaN(value) && value >= 0 && value <= 255) {
                                                 handleRGBChange(color, value);
                                             }
@@ -145,7 +148,10 @@ function App() {
                                         variant="outlined"
                                         value={cmyk[color]}
                                         onChange={(e) => {
-                                            const value = parseInt(e.target.value, 10);
+                                            let value = parseInt(e.target.value, 10);
+                                            if (isNaN(value)) {
+                                                value = 0;
+                                            }
                                             if (!isNaN(value) && value >= 0 && value <= 100) {
                                                 handleCMYKChange(color, value);
                                             }
@@ -182,7 +188,10 @@ function App() {
                                         variant="outlined"
                                         value={hsl[color]}
                                         onChange={(e) => {
-                                            const value = parseInt(e.target.value, 10);
+                                            let value = parseInt(e.target.value, 10);
+                                            if (isNaN(value)) {
+                                                value = 0;
+                                            }
                                             if (!isNaN(value) && value >= 0 && value <= (color === 'h' ? 360 : 100)) {
                                                 handleHSLChange(color, value);
                                             }
