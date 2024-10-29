@@ -15,7 +15,6 @@ function App() {
         return convert.rgb.hex(r, g, b);
     }
 
-    // Conversion functions
     const rgbToCmyk = (r, g, b) => {
         return convert.rgb.cmyk(r, g, b);
     };
